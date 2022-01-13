@@ -117,11 +117,9 @@
     <div class="pull-right hidden-xs">
       <!-- <b>(021)</b>7398615 -->
     </div>
-    {{-- <strong>
-      informasi teknis/jasa pembuatan website : <br>
-      Fadly Rifai <br>
-      Telp: 0896-0849-8550      e-mail: fadlyrifai95@gmail.com
-    </strong> --}}
+    <strong>
+      Hai , Akbar!
+    </strong>
   </footer>
 
   <!-- Control Sidebar -->

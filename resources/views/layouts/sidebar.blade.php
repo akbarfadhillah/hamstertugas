@@ -6,7 +6,7 @@
 
         
 
-        <li class="menu-sidebar"><a href="{{ url('/beranda') }}"><span class="fa fa-calendar-minus-o"></span> Beranda Dashboard</span></a></li>
+        <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><span class="fa fa-calendar-minus-o"></span> HAMSTER</span></a></li>
 
         @if(\Auth::user()->role == 1)
 
@@ -41,7 +41,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ url('set/jadwal-pelajaran') }}"><i class="fa fa-circle-o"></i> Set Jadwal Pelajaran</a></li>
 
-            <li><a href="{{ url('jadwal-pelajaran') }}"><i class="fa fa-circle-o"></i> List Jadwal Pelajaran</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> List Jadwal Pelajaran</a></li>
 
             <li><a href="{{ url('action/jadwal-pelajaran') }}"><i class="fa fa-circle-o"></i> Action Jadwal Pelajaran</a></li>
           </ul>
@@ -51,10 +51,12 @@
 
         @if((\Auth::user()->role == 2) || (\Auth::user()->role == 3))
 
-        <li class="menu-sidebar"><a href="{{ url('/jadwal-pelajaran-ku') }}"><span class="glyphicon glyphicon-log-out"></span> Jadwal Pelajaran Ku</span></a></li>
+        <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><span class="glyphicon glyphicon-log-out"></span> Hamster</span></a></li>
 
         @endif
-
+        
+        <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><span class="glyphicon glyphicon-log-out"></span> Hamster</span></a></li>
+        
         <li class="menu-sidebar"><a href="{{ url('/update-profile') }}"><span class="glyphicon glyphicon-log-out"></span> Update Profile</span></a></li>
 
         <li class="nav-item dropdown">
