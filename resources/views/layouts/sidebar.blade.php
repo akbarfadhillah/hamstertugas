@@ -6,7 +6,8 @@
 
         
 
-        <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><span class="fa fa-calendar-minus-o"></span> HAMSTER</span></a></li>
+        <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
+          </span> DATA HAMSTER</span></a></li>
 
         @if(\Auth::user()->role == 1)
 
@@ -50,14 +51,10 @@
         @endif
 
         @if((\Auth::user()->role == 2) || (\Auth::user()->role == 3))
-
-        <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><span class="glyphicon glyphicon-log-out"></span> Hamster</span></a></li>
-
         @endif
         
-        <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><span class="glyphicon glyphicon-log-out"></span> Hamster</span></a></li>
-        
-        <li class="menu-sidebar"><a href="{{ url('/update-profile') }}"><span class="glyphicon glyphicon-log-out"></span> Update Profile</span></a></li>
+        <li class="menu-sidebar"><a href="{{ route('hamster.create') }}"><span class="glyphicon glyphicon-log-out"></span> TAMBAH HAMSTER</span></a></li>
+
 
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
