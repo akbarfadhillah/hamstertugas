@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\hamstermasuk;
+use App\hamsterstock;
 use Illuminate\Http\Request;
 
 class HamstermasukController extends Controller
@@ -14,7 +14,8 @@ class HamstermasukController extends Controller
      */
     public function index()
     {
-        //
+        $hamster = hamstermasuk::all();
+        return view('hamstermasuk.index', compact('hamster'));
     }
 
     /**
@@ -22,10 +23,6 @@ class HamstermasukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +32,20 @@ class HamstermasukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'hamster_id' => 'required',
+            'jenis' => 'required',
+            'jumlah' => 'required',
+            'tanggal' => 'required'
+        ]);
+
+        $hamster = new hamsterstock;
+        $hamster->hamster_id = $request->id;
+        $hamster->jenis = $request->jenis;
+        $hamster->jumlah = $request->jumlah;
+        $hamster->tanggal = $request->tanggal;
+        $hamster->save();
+        return redirect()->route('hamstermasuk.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
@@ -44,7 +54,7 @@ class HamstermasukController extends Controller
      * @param  \App\hamstermasuk  $hamstermasuk
      * @return \Illuminate\Http\Response
      */
-    public function show(hamstermasuk $hamstermasuk)
+    public function show(hamsterstock $hamsterstock)
     {
         //
     }
@@ -52,34 +62,48 @@ class HamstermasukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\hamstermasuk  $hamstermasuk
+     * @param  \App\hamsterstock  $hamsterstock
      * @return \Illuminate\Http\Response
      */
-    public function edit(hamstermasuk $hamstermasuk)
+    public function edit(hamsterstock $hamsterstock,$id )
     {
-        //
+        $hamster = hamsterstock::findOrFail($id);
+        return view('hasmter.edit',compact('hamster'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\hamstermasuk  $hamstermasuk
+     * @param  \App\hamsterstock  $hamsterstock
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, hamstermasuk $hamstermasuk)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'jenis' => 'required',
+            'harga' => 'required',
+            'stok' => 'required'
+        ]);
+
+        $hamster = hamsterstock::findOrFail($id);
+        $hamster->jenis = $request->jenis;
+        $hamster->harga = $request->harga;
+        $hamster->stok = $request->stok;
+        $hamster->save();
+        return redirect()->route('hamster.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\hamstermasuk  $hamstermasuk
+     * @param  \App\hamsterstock  $hamsterstock
      * @return \Illuminate\Http\Response
      */
-    public function destroy(hamstermasuk $hamstermasuk)
+    public function destroy($id)
     {
-        //
+        $hamster = hamsterstock::findOrFail($id);
+        $hamster->delete();
+        return redirect()->route('hamster.index');
     }
 }
