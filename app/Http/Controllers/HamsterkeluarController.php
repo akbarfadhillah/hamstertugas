@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\hamstermasuk;
+use App\hamsterkeluar;
 use App\hamsterstock;
 use Illuminate\Http\Request;
 
-class HamstermasukController extends Controller
+class HamsterkeluarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class HamstermasukController extends Controller
      */
     public function index()
     {
-        $hamster = hamstermasuk::all();
-        return view('hamstermasuk.index', compact('hamster'));
+        $hamster = hamsterkeluar::with('hamsterstock')->get();
+        return view('hamsterkeluar.index', compact('hamster'));
     }
 
     /**
@@ -46,16 +46,16 @@ class HamstermasukController extends Controller
         $hamster->jumlah = $request->jumlah;
         $hamster->tanggal = $request->tanggal;
         $hamster->save();
-        return redirect()->route('hamstermasuk.index')->with('success', 'Data Berhasil Disimpan');
+        return redirect()->route('hamsterkeluar.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\hamstermasuk  $hamstermasuk
+     * @param  \App\hamsterkeluar  $hamsterkeluar
      * @return \Illuminate\Http\Response
      */
-    public function show(hamstermasuk $hamstermasuk)
+    public function show(hamsterkeluar $hamsterkeluar)
     {
         //
     }
@@ -63,7 +63,7 @@ class HamstermasukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\hamstermasuk  $hamstermasuk
+     * @param  \App\hamsterkeluar  $hamsterkeluar
      * @return \Illuminate\Http\Response
      */
     

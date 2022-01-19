@@ -15,7 +15,7 @@ class HamstermasukController extends Controller
      */
     public function index()
     {
-        $hamster = hamstermasuk::all();
+        $hamster = hamstermasuk::with('hamsterstock')->get();
         return view('hamstermasuk.index', compact('hamster'));
     }
 
