@@ -9,7 +9,7 @@ class hamsterkeluar extends Model
     protected $table = 'hamsterkeluars';
     protected $fillable = array('jenis','tanggal','jumlah','hamster_id');
 
-    public function hamsterstock() {
+    public function hamsterkeluar() {
         return $this->belongsTo('App\hamsterstock', 'hamster_id', 'id');
     }
 }

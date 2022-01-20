@@ -12,7 +12,7 @@
                 <div class="card">
                     <div class="card-header">Ada Hamster Masuk?
                         <div>
-                        <a href="{{ route('hamster.create') }}" class="float-right btn btn-success btn-floating"> Tambah Hamster Baru!</a>
+                        <a href="{{ route('hamstermasuk.create') }}" class="float-right btn btn-success btn-floating"> Tambah Hamster Baru!</a>
                     </div>
                         <div class="row">
                              <div class="col-md-12">
@@ -30,16 +30,16 @@
                                             </thead>
                                             <tbody>
                                                 @php $no = 1; @endphp
-                                                @foreach($hamster as $data)
+                                                @foreach($hamstermasuk as $data)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
                                                     <td>{{$data->jenis}}</td>
                                                     <td>{{$data->stok}}</td>
                                                     <td>{{$data->harga}}</td>
                                                     <td>
-                                                    <form action="{{ route('hamster.destroy', $data->id) }}"method="POST">
+                                                    <form action="{{ route('hamstermasuk.destroy', $data->id) }}"method="POST">
                                                         @csrf @method('delete')
-                                                        <a href="{{ route('hamster.edit',$data->id) }}" class="btn btn-primary">Edit</a>
+                                                        <a href="{{ route('hamstermasuk.edit',$data->id) }}" class="btn btn-primary">Edit</a>
                                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data?')">Delete</button>
                                                     </form>
                                                     </td>
