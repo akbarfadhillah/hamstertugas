@@ -25,7 +25,7 @@ Route::get('/', function () {
 // Auth::routes();
 
 Route::resource('hamster','HamsterstockController');
-Route::resource('hamstermasuk','HamstersmasukController');
+Route::resource('hamsterin','HamstersinController');
 Route::resource('hamsterkeluar','HamsterskeluarController');
 
 Route::get('/home', 'HomeController@index')->name('home');

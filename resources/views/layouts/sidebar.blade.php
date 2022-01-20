@@ -28,7 +28,7 @@
         @if((\Auth::user()->role == 2) || (\Auth::user()->role == 3))
         @endif
         
-        <li class="menu-sidebar"><a href="{{ route('hamstermasuk.index') }}"><span class="glyphicon glyphicon-log-out"></span> HAMSTER MASUK</span></a></li>
+        <li class="menu-sidebar"><a href="{{ route('hamsterin.index') }}"><span class="glyphicon glyphicon-log-out"></span> HAMSTER MASUK</span></a></li>
 
 
         <li class="nav-item dropdown">

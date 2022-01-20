@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\hamsterin;
 use App\hamstermasuk;
 use App\hamsterstock;
 
-class HamstermasukController extends Controller
+class HamsterinController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class HamstermasukController extends Controller
      */
     public function index()
     {
-        $hamstermasuk = hamstermasuk::with('hamsterstock')->get();
-        return view('hamstermasuk.index',compact('hamstermasuk'));
+      $hamsterin = hamstermasuk::with('hamsterstock')->get();
+      return view('hamstermasuk.index',compact('hamstermasuk'));   
     }
 
     /**
