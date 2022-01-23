@@ -10,9 +10,9 @@
             @endif
             <div class="card-body">
                 <div class="card">
-                    <div class="card-header">Ada Hamster Masuk?
+                    <div class="card-header">Data Stok Hamster
                         <div>
-                        <a href="{{ route('hamsterin.create') }}" class="float-right btn btn-success btn-floating"> Tambah Hamster Baru!</a>
+                        <a href="{{ route('hamstermasuk.create') }}" class="float-right btn btn-success btn-floating"> Tambah Stok Hamster</a>
                     </div>
                         <div class="row">
                              <div class="col-md-12">
@@ -23,23 +23,23 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Jenis Hamster</th>
-                                                    <th>Stok Hamster</th>
-                                                    <th>Harga</th>
+                                                    <th>Jumlah</th>
+                                                    <th>Tanggal</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @php $no = 1; @endphp
-                                                @foreach($hamsterin as $data)
+                                                @foreach($hamster as $data)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
                                                     <td>{{$data->jenis}}</td>
                                                     <td>{{$data->stok}}</td>
                                                     <td>{{$data->harga}}</td>
                                                     <td>
-                                                    <form action="{{ route('hamsterin.destroy', $data->id) }}"method="POST">
+                                                    <form action="{{ route('hamster.destroy', $data->id) }}"method="POST">
                                                         @csrf @method('delete')
-                                                        <a href="{{ route('hamsterin.edit',$data->id) }}" class="btn btn-primary">Edit</a>
+                                                        <a href="{{ route('hamster.edit',$data->id) }}" class="btn btn-primary">Edit</a>
                                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data?')">Delete</button>
                                                     </form>
                                                     </td>

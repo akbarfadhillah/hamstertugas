@@ -9,6 +9,11 @@
         <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> DATA HAMSTER</span></a></li>
 
+        <li class="menu-sidebar"><a href="{{route('hamstermasuk.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
+          </span> hamster masuk</span></a></li>  
+
+        
+
         @if(\Auth::user()->role == 1)
 
         <li class="treeview">
@@ -28,7 +33,7 @@
         @if((\Auth::user()->role == 2) || (\Auth::user()->role == 3))
         @endif
         
-        <li class="menu-sidebar"><a href="{{ route('hamsterin.index') }}"><span class="glyphicon glyphicon-log-out"></span> HAMSTER MASUK</span></a></li>
+      
 
 
         <li class="nav-item dropdown">
