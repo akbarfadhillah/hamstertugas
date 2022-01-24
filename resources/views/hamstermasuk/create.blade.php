@@ -7,7 +7,7 @@
 	<div class="col-md-12">
 		<div class="card">
 			<h5 class="card-header"><b>Masukan Stok Baru Hamster</b></h5>
-			<form action="{{ route('hamster.store') }}" method="post">
+			<form action="{{ route('hamstermasuk.store') }}" method="post">
 				{{ csrf_field() }}
 				<div class="card-body">
 
@@ -22,10 +22,10 @@
 			  		</div>
 			  		<div class="form-group {{ $errors->has('banyak') ? ' has-error' : '' }}">
 			  			<label class="control-label">Banyak Hamster</label>	
-			  			<input type="text" name="harga" class="form-control"  required>
+			  			<input type="text" name="banyak" class="form-control"  required>
 			  			@if ($errors->has('banyak'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('harga') }}</strong>
+                                <strong>{{ $errors->first('banyak') }}</strong>
                             </span>
                         @endif
 			  		</div>

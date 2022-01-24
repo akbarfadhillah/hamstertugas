@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\hamstermasuk;
+use App\hamsterkeluar;
 use App\hamsterstock;
 
-class HamstermasukController extends Controller
+class HamsterkeluarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class HamstermasukController extends Controller
      */
     public function index()
     {
-        $hamster = hamstermasuk::with('hamsterstock')->get();
-        return view('hamstermasuk.index', compact('hamster'));
+        $hamster = hamsterkeluar::with('hamsterstock')->get();
+        return view('hamsterkeluar.index', compact('hamster'));
     }
 
     /**
@@ -26,7 +26,7 @@ class HamstermasukController extends Controller
      */
     public function create()
     {
-        return view('hamstermasuk.create');
+        return view('hamsterkeluar.create');
     }
 
     /**
@@ -42,20 +42,20 @@ class HamstermasukController extends Controller
             'jumlah' => 'required'
         ]);
 
-        $hamster = new hamstermasuk;
+        $hamster = new hamsterkeluar;
         $hamster->jenis = $request->jenis;
         $hamster->jumlah = $request->jumlah;
         $hamster->save();
-        return redirect()->route('hamstermasuk.index')->with('success', 'Data Berhasil Disimpan');
+        return redirect()->route('hamsterkeluar.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\hamstermasuk  $hamstermasuk
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(hamstermasuk $hamstermasuk)
+    public function show($id)
     {
         //
     }
@@ -63,20 +63,20 @@ class HamstermasukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\hamsterstock  $hamsterstock
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(hamstermasuk $hamstermasuk,$id )
+    public function edit($id)
     {
-        $hamster = hamstermasuk::findOrFail($id);
-        return view('hamstermasuk.edit',compact('hamster'));
+        $hamster = hamsterkeluar::findOrFail($id);
+        return view('hamsterkeluar.edit',compact('hamster'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\hamsterstock  $hamsterstock
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -87,7 +87,7 @@ class HamstermasukController extends Controller
             'tanggal' => 'required'
         ]);
 
-        $hamster = hamstermasuk::findOrFail($id);
+        $hamster = hamsterkeluar::findOrFail($id);
         $hamster->jenis = $request->jenis;
         $hamster->jumlah = $request->jumlah;
         $hamster->tanggal = $request->tanggal;
@@ -98,13 +98,13 @@ class HamstermasukController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\hamsterstock  $hamsterstock
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $hamster = hamstermasuk::findOrFail($id);
+        $hamster = hamsterkeluar::findOrFail($id);
         $hamster->delete();
-        return redirect()->route('hamstermasuk.index');
+        return redirect()->route('hamsterkeluar.index');
     }
 }

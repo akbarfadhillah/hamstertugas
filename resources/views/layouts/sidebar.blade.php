@@ -12,7 +12,8 @@
         <li class="menu-sidebar"><a href="{{route('hamstermasuk.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> hamster masuk</span></a></li>  
 
-        
+        <li class="menu-sidebar"><a href="{{route('hamsterkeluar.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
+          </span> hamster keluar</span></a></li>
 
         @if(\Auth::user()->role == 1)
 
