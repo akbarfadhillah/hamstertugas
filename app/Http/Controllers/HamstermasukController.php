@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\hamstermasuk;
 use App\hamsterstock;
+use Illuminate\Http\Request;
 
 class HamstermasukController extends Controller
 {
@@ -15,8 +15,8 @@ class HamstermasukController extends Controller
      */
     public function index()
     {
-        $hamster = hamstermasuk::with('hamsterstock')->get();
-        return view('hamstermasuk.index', compact('hamster'));
+        $hamstermasuk = hamstermasuk::with('hamsterstock')->get();
+        return view('hamstermasuk.index', compact('hamstermasuk'));
     }
 
     /**
@@ -26,9 +26,10 @@ class HamstermasukController extends Controller
      */
     public function create()
     {
-        return view('hamstermasuk.create');
+        $hamstermasuk = hamstermasuk::all();
+        $hamsterstock = hamsterstock::all();
+        return view('hamstermasuk.create',compact('hamstermasuk','hamsterstock'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -39,14 +40,19 @@ class HamstermasukController extends Controller
     {
         $request->validate([
             'jenis' => 'required',
-            'jumlah' => 'required'
+            'tanggal' => 'required',
+            'jumlah' => 'required',
+            'hamster_id' => 'required'
         ]);
 
-        $hamster = new hamstermasuk;
-        $hamster->jenis = $request->jenis;
-        $hamster->jumlah = $request->jumlah;
-        $hamster->save();
-        return redirect()->route('hamstermasuk.index')->with('success', 'Data Berhasil Disimpan');
+        $hamstermasuk = new hamstermasuk;
+        $hamsterstock = hamsterstock::where(['id' => $request['hamster_id']])->first();
+        $hamstermasuk->jenis = $request->jenis;
+        $hamstermasuk->tanggal = $date->tanggal;
+        $hamstermasuk->jumlah = $request->jumlah;
+        $hamstermasuk->hamster_id = $request->hamster_id;
+        $hamstermasuk->save();
+        return redirect()->route('hamstermasukk.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**

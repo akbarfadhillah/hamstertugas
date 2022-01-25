@@ -9,10 +9,10 @@
         <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> DATA HAMSTER</span></a></li>
 
-        <li class="menu-sidebar"><a href="{{route('hamstermasuk.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
+        <li class="menu-sidebar"><a href="{{route('hamstermasukk.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> hamster masuk</span></a></li>  
 
-        <li class="menu-sidebar"><a href="{{route('hamsterkeluar.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
+        <li class="menu-sidebar"><a href="{{route('hamsterkeluarr.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> hamster keluar</span></a></li>
 
         @if(\Auth::user()->role == 1)

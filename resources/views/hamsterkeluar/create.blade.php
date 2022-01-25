@@ -6,7 +6,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
-			<h5 class="card-header"><b>Masukan Stok Hamster</b></h5>
+			<h5 class="card-header"><b>Stok Hamster Keluar</b></h5>
 			<form action="{{ route('hamster.store') }}" method="post">
 				{{ csrf_field() }}
 				<div class="card-body">

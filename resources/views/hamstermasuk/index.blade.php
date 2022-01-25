@@ -12,7 +12,7 @@
                 <div class="card">
                     <div class="card-header">Data Stok Hamster
                         <div>
-                        <a href="{{ route('hamster.create') }}" class="float-right btn btn-success btn-floating"> Tambah Stok Hamster</a>
+                        <a href="{{ route('hamstermasukk.create') }}" class="float-right btn btn-success btn-floating"> Tambah Stok Hamster</a>
                     </div>
                         <div class="row">
                              <div class="col-md-12">
@@ -30,16 +30,16 @@
                                             </thead>
                                             <tbody>
                                                 @php $no = 1; @endphp
-                                                @foreach($hamster as $data)
+                                                @foreach($hamstermasuk as $hamstermasuks)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
-                                                    <td>{{$data->jenis}}</td>
-                                                    <td>{{$data->jumlah}}</td>
-                                                    <td>{{$data->tanggal}}</td>
+                                                    <td>{{$hamstermasuks->jenis}}</td>
+                                                    <td>{{$hamstermasuks->tanggal}}</td>
+                                                    <td>{{$hamstermasuks->jumlah}}</td>
                                                     <td>
-                                                    <form action="{{ route('hamster.destroy', $data->id) }}"method="POST">
+                                                    <form action="{{ route('hamster.destroy', $hamstermasuks->id) }}"method="POST">
                                                         @csrf @method('delete')
-                                                        <a href="{{ route('hamster.edit',$data->id) }}" class="btn btn-primary">Edit</a>
+                                                        <a href="{{ route('hamster.edit',$hamstermasuks->id) }}" class="btn btn-primary">Edit</a>
                                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data?')">Delete</button>
                                                     </form>
                                                     </td>

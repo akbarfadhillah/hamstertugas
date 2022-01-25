@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\hamsterkeluar;
+use App\hamsterkeluarr;
 use App\hamsterstock;
 
 class HamsterkeluarController extends Controller
