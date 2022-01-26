@@ -6,38 +6,45 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
-			<h5 class="card-header"><b>Stok Hamster Keluar</b></h5>
-			<form action="{{ route('hamster.store') }}" method="post">
+			<h5 class="card-header"><b>Tambah Data Vape</b></h5>
+			<form action="{{ route('hamsterkeluar.store') }}" method="post">
 				{{ csrf_field() }}
 				<div class="card-body">
 
-			  		<div class="form-group {{ $errors->has('jenis') ? ' has-error' : '' }}">
-			  			<label class="control-label">Jenis Hamster</label>	
-			  			<input type="text" name="jenis" class="form-control"  required>
-			  			@if ($errors->has('jenis'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('jenis') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
-			  		<div class="form-group {{ $errors->has('harga') ? ' has-error' : '' }}">
-			  			<label class="control-label">Harga Hamster</label>	
-			  			<input type="text" name="harga" class="form-control"  required>
-			  			@if ($errors->has('harga'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('harga') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
-			  		<div class="form-group {{ $errors->has('stok') ? ' has-error' : '' }}">
-			  			<label class="control-label">Banyak Stok Hamster</label>	
-			  			<input type="text" name="stok" class="form-control"  required>
-			  			@if ($errors->has('stok'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('stok') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
+					<div class="form-group {{ $errors->has('hamster_id') ? ' has-error' : '' }}">
+                        <label class="control-label">Nama Barang</label>	
+                        <select name="hamster_id" class="form-control">
+                        <option>---</option>
+                          @foreach($hamsterstock as $data)
+                            <option value="{{ $data->id }}">{{ $data->jenis }}</option>
+                            @endforeach
+                        </select>
+                        @if ($errors->has('hamster_id'))
+                          <span class="help-block">
+                              <strong>{{ $errors->first('hamster_id') }}</strong>
+                          </span>
+                      @endif
+                    </div>
+
+					  <div class="form-group {{ $errors->has('jumlah') ? ' has-error' : '' }}">
+						<label class="control-label">jumlah</label>	
+						<input type="number" name="jumlah" class="form-control"  required>
+						@if ($errors->has('jumlah'))
+						  <span class="help-block">
+							  <strong>{{ $errors->first('jumlah') }}</strong>
+						  </span>
+					  @endif
+					</div>
+
+					<div class="form-group {{ $errors->has('tanggal') ? ' has-error' : '' }}">
+						<label class="control-label">tanggal</label>	
+						<input type="date" name="tanggal" class="form-control"  required>
+						@if ($errors->has('tanggal'))
+						  <span class="help-block">
+							  <strong>{{ $errors->first('tanggal') }}</strong>
+						  </span>
+					  @endif
+					</div>
 			  		
 			  		<div class="form-group">
 			  			<button type="button submit" class="btn btn-primary btn-rounded btn-floating">Simpan</button>

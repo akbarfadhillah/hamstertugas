@@ -23,23 +23,23 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Jenis Hamster</th>
-                                                    <th>Stok Hamster</th>
-                                                    <th>Harga</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Jumlah</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @php $no = 1; @endphp
-                                                @foreach($hamster as $data)
+                                                @foreach($hamsterkeluar as $hamsterkeluars)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
-                                                    <td>{{$data->jenis}}</td>
-                                                    <td>{{$data->stok}}</td>
-                                                    <td>{{$data->harga}}</td>
+                                                    <td>{{$hamsterkeluars->hamsterstock->jenis}}</td>
+                                                    <td>{{$hamsterkeluars->tanggal}}</td>
+                                                    <td>{{$hamsterkeluars->jumlah}}</td>
                                                     <td>
-                                                    <form action="{{ route('hamsterkeluar.destroy', $data->id) }}"method="POST">
+                                                    <form action="{{ route('hamsterkeluar.destroy', $hamsterkeluars->id) }}"method="POST">
                                                         @csrf @method('delete')
-                                                        <a href="{{ route('hamsterkeluar.edit',$data->id) }}" class="btn btn-primary">Edit</a>
+                                                        <a href="{{ route('hamsterkeluar.edit',$hamsterkeluars->id) }}" class="btn btn-primary">Edit</a>
                                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data?')">Delete</button>
                                                     </form>
                                                     </td>

@@ -39,7 +39,6 @@ class HamstermasukController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'jenis' => 'required',
             'tanggal' => 'required',
             'jumlah' => 'required',
             'hamster_id' => 'required'
@@ -47,12 +46,11 @@ class HamstermasukController extends Controller
 
         $hamstermasuk = new hamstermasuk;
         $hamsterstock = hamsterstock::where(['id' => $request['hamster_id']])->first();
-        $hamstermasuk->jenis = $request->jenis;
-        $hamstermasuk->tanggal = $date->tanggal;
+        $hamstermasuk->tanggal = $request->tanggal;
         $hamstermasuk->jumlah = $request->jumlah;
         $hamstermasuk->hamster_id = $request->hamster_id;
         $hamstermasuk->save();
-        return redirect()->route('hamstermasukk.index')->with('success', 'Data Berhasil Disimpan');
+        return redirect()->route('hamstermasuk.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**

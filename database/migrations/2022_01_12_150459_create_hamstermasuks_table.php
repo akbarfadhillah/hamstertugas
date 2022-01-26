@@ -15,7 +15,6 @@ class CreateHamstermasuksTable extends Migration
     {
         Schema::create('hamstermasuks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('jenis');
             $table->date('tanggal');
             $table->string('jumlah');
             $table->unsignedBigInteger('hamster_id');

@@ -5,7 +5,7 @@
 	<div class="col-md-12">
 		<div class="card"><br><a href="{{ url()->previous() }}">&nbsp;&nbsp;&nbsp;&nbsp;Kembali</a>
 			<h5 class="card-header"><b>Edit Stok Hamster</b></h5>
-			<form action="{{ route('hamster.update',$hamster->id) }}" method="post">
+			<form action="{{ route('hamsterkeluar.update',$hamster->id) }}" method="post">
 				{{ csrf_field() }}
 				<div class="card-body">
 

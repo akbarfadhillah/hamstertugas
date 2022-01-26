@@ -9,13 +9,13 @@
         <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> DATA HAMSTER</span></a></li>
 
-        <li class="menu-sidebar"><a href="{{route('hamstermasukk.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
+        <li class="menu-sidebar"><a href="{{route('hamstermasuk.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> hamster masuk</span></a></li>  
 
-        <li class="menu-sidebar"><a href="{{route('hamsterkeluarr.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
+        <li class="menu-sidebar"><a href="{{route('hamsterkeluar.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> hamster keluar</span></a></li>
 
-        @if(\Auth::user()->role == 1)
+        {{-- @if(\Auth::user()->role == 1)
 
         <li class="treeview">
           <a href="#">
@@ -32,14 +32,14 @@
         @endif
 
         @if((\Auth::user()->role == 2) || (\Auth::user()->role == 3))
-        @endif
+        @endif --}}
         
       
 
 
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-              {{ Auth::user()->name }} <span class="caret"></span>
+              {{-- {{ Auth::user()->name }} <span class="caret"></span> --}}
           </a>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
