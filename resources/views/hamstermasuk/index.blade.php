@@ -10,9 +10,9 @@
             @endif
             <div class="card-body">
                 <div class="card">
-                    <div class="card-header">Data Stok Hamster
+                    <div class="card-header">Data Hamster Baru
                         <div>
-                        <a href="{{ route('hamstermasuk.create') }}" class="float-right btn btn-success btn-floating"> Tambah Stok Hamster</a>
+                        <a href="{{ route('hamstermasuk.create') }}" class="float-right btn btn-success btn-floating"> Tambah Stok Hamster Baru</a>
                     </div>
                         <div class="row">
                              <div class="col-md-12">
@@ -25,7 +25,7 @@
                                                     <th>Jenis Hamster</th>
                                                     <th>Tanggal</th>
                                                     <th>Jumlah</th>
-                                                    <th>action</th>
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -37,11 +37,7 @@
                                                     <td>{{$hamstermasuks->tanggal}}</td>
                                                     <td>{{$hamstermasuks->jumlah}}</td>
                                                     <td>
-                                                    <form action="{{ route('hamstermasuk.destroy', $hamstermasuks->id) }}"method="POST">
-                                                        @csrf @method('delete')
-                                                        <a href="{{ route('hamstermasuk.edit',$hamstermasuks->id) }}" class="btn btn-primary">Edit</a>
-                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data?')">Delete</button>
-                                                    </form>
+                                                    
                                                     </td>
                                                 </tr>
                                                 @endforeach

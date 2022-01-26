@@ -12,7 +12,7 @@
                 <div class="card">
                     <div class="card-header">Data Hamster Terjual
                         <div>
-                        <a href="{{ route('hamsterkeluar.create') }}" class="float-right btn btn-success btn-floating"> Tambah Stok Hamster</a>
+                        <a href="{{ route('hamsterkeluar.create') }}" class="float-right btn btn-success btn-floating"> Tambah Penjualan Hamster</a>
                     </div>
                         <div class="row">
                              <div class="col-md-12">
@@ -25,7 +25,7 @@
                                                     <th>Jenis Hamster</th>
                                                     <th>Tanggal</th>
                                                     <th>Jumlah</th>
-                                                    <th>Action</th>
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -37,11 +37,7 @@
                                                     <td>{{$hamsterkeluars->tanggal}}</td>
                                                     <td>{{$hamsterkeluars->jumlah}}</td>
                                                     <td>
-                                                    <form action="{{ route('hamsterkeluar.destroy', $hamsterkeluars->id) }}"method="POST">
-                                                        @csrf @method('delete')
-                                                        <a href="{{ route('hamsterkeluar.edit',$hamsterkeluars->id) }}" class="btn btn-primary">Edit</a>
-                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data?')">Delete</button>
-                                                    </form>
+                                                    
                                                     </td>
                                                 </tr>
                                                 @endforeach
