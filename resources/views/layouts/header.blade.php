@@ -2,21 +2,11 @@
 <?php
   // $dt = \App\User::where('id',\Auth::user()->id)->first();
 ?>
-<a href="../../index2.html" class="logo">
-  <!-- mini logo for sidebar mini 50x50 pixels -->
-  <span class="logo-mini"><b>A</b>LT</span>
-  <!-- logo for regular state and mobile devices -->
-  {{-- <span class="logo-lg"><b>{{ \Auth::user()->name }}</b></span> --}}
-</a>
+<a></a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top">
   <!-- Sidebar toggle button-->
-  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </a>
+  
 
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
@@ -24,7 +14,7 @@
       <!-- Tasks: style can be found in dropdown.less -->
       
       <!-- User Account: style can be found in dropdown.less -->
-      
+
       
 
       <li class="dropdown notifications-menu">
@@ -33,42 +23,35 @@
               <span class="label label-warning"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">Product Attention</li>
+              <li class="header">Product Hamster</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   
                 </ul>
               </li>
-              <li class="footer"><a href="{{ url('jadwal-reservasi') }}">View all</a></li>
+              <li class="footer"><a href="{{ route('hamster.index') }}">View all</a></li>
             </ul>
           </li>
-
-      <li class="dropdown user user-menu">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <img src="" class="user-image" alt="User Image">
-          {{-- <span class="hidden-xs">{{\Auth::user()->name}}</span> --}}
-        </a>
-        <ul class="dropdown-menu">
-          <!-- User image -->
-          <li class="user-header">
+      <li class="user-header">
             <img src="" class="img-circle" alt="User Image">
+            
+      </li>
+      <li class="nav-item dropdown">
+          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+             <span class="caret"></span>
+          </a>
+      
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">Logout
+              </a>
 
-            <p>
-              {{-- {{\Auth::user()->name}} --}}
-              {{-- <small>{{ \Auth::user()->name }}</small> --}}
-            </p>
-          </li>
-          <!-- Menu Footer-->
-          <li class="user-footer">
-            <div class="pull-left">
-              <a href="{{ url('admin/profile') }}" class="btn btn-default btn-flat menu-sidebar">Profile</a>
-            </div>
-            <div class="pull-right">
-            <a href="{{ url('keluar') }}" class="btn btn-default btn-flat menu-sidebar">Sign out</a>
-            </div>
-          </li>
-        </ul>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+          </div>
       </li>
       
     </ul>

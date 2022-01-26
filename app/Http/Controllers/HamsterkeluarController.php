@@ -44,7 +44,12 @@ class HamsterkeluarController extends Controller
             'jumlah' => 'required',
             'hamster_id' => 'required'
         ]);
-
+        $hamster = hamsterstock::where(['id' => $request['hamster_id']])->first();
+        if($hamster){
+            $stock = $hamster->stok - (int) $request->jumlah;
+            $hamster->update(['stok' => $stock]);
+        }
+        
         $hamsterkeluar = new hamsterkeluar;
         $hamsterstock = hamsterstock::where(['id' => $request['hamster_id']])->first();
         $hamsterkeluar->tanggal = $request->tanggal;

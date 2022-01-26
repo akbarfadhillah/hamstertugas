@@ -4,16 +4,15 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
 
-        
 
         <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> DATA HAMSTER</span></a></li>
 
         <li class="menu-sidebar"><a href="{{route('hamstermasuk.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
-          </span> hamster masuk</span></a></li>  
+          </span> INPUT STOCK HAMSTER</span></a></li>  
 
         <li class="menu-sidebar"><a href="{{route('hamsterkeluar.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
-          </span> hamster keluar</span></a></li>
+          </span> INPUT PENJUALAN HAMSTER</span></a></li>
 
         {{-- @if(\Auth::user()->role == 1)
 

@@ -10,7 +10,7 @@
             @endif
             <div class="card-body">
                 <div class="card">
-                    <div class="card-header">Data Stok Hamster
+                    <div class="card-header">Data Hamster Terjual
                         <div>
                         <a href="{{ route('hamsterkeluar.create') }}" class="float-right btn btn-success btn-floating"> Tambah Stok Hamster</a>
                     </div>

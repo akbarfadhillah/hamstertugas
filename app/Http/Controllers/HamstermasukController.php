@@ -44,6 +44,11 @@ class HamstermasukController extends Controller
             'hamster_id' => 'required'
         ]);
 
+        $hamster = hamsterstock::where(['id' => $request['hamster_id']])->first();
+        if($hamster){
+            $stock = $hamster->stok + (int) $request->jumlah;
+            $hamster->update(['stok' => $stock]);
+        }
         $hamstermasuk = new hamstermasuk;
         $hamsterstock = hamsterstock::where(['id' => $request['hamster_id']])->first();
         $hamstermasuk->tanggal = $request->tanggal;
@@ -51,6 +56,8 @@ class HamstermasukController extends Controller
         $hamstermasuk->hamster_id = $request->hamster_id;
         $hamstermasuk->save();
         return redirect()->route('hamstermasuk.index')->with('success', 'Data Berhasil Disimpan');
+
+
     }
 
     /**
