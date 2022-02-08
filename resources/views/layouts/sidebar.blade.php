@@ -4,7 +4,20 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
 
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        
         <li class="menu-sidebar"><a href="{{route('hamster.index')}}"><i class="glyphicon glyphicon-tasks" style="font-size:15px"></i>
           </span> DATA HAMSTER</span></a></li>
 

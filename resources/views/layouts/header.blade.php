@@ -15,8 +15,18 @@
       
       <!-- User Account: style can be found in dropdown.less -->
 
-      
+      <li class="user-header">
+            <img src="{{ ('hamster3.jpg ') }}">
 
+      <li class="user-header">
+            <img src="{{ ('hamster1.jpg ') }}">
+
+      <li class="user-header">
+            <img src="{{ ('hamster4.jpg ') }}">
+
+      <li class="user-header">
+            <img src="{{ ('hamster5.jpg ') }}">
+            
       <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -33,10 +43,6 @@
               <li class="footer"><a href="{{ route('hamster.index') }}">View all</a></li>
             </ul>
           </li>
-      <li class="user-header">
-            <img src="" class="img-circle" alt="User Image">
-            
-      </li>
       <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
              <span class="caret"></span>
@@ -45,7 +51,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ route('logout') }}"
                  onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();">Logout
+                               document.getElementById('logout-form').submit();">LOGOUT
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -53,6 +59,8 @@
               </form>
           </div>
       </li>
+      
+      
       
     </ul>
   </div>
